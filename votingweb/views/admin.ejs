@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+</head>
+<body>
+    <div>
+        <h2>Admin Login Tab</h2>
+        <form action="/adminDashBoard" method = 'POST'>
+            <label for = 'AdminId'>AdminId:</label>
+            <input type = 'text' name='AdminId' method><br>
+            <label for = 'password'>password:</label>
+            <input type = 'password' name='password'><br>
+            <input type='submit'><br>
+        </form>
+    </div>
+
+    <div>
+            <h2>Admin Register Tab</h2>
+            <form action="/adminRegister" method = 'POST'>
+                <label for = 'AdminId'>AdminId:</label>
+                <input type = 'text' name='AdminId' method><br>
+                <label for = 'phoneNo'>PhoneNo:</label>
+                <input type = 'text' name='phoneNo' method><br>
+                <label for = 'password'>password:</label>
+                <input type = 'password' name='password'><br>
+                <label for = 'retypepassword'>retype-password:</label>
+                <input type = 'password' name='retypepassword'><br>
+                <input type='submit'><br>
+            </form>
+    </div>
+    
+</body>
+</html>

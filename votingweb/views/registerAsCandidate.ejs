@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+   <body>
+   	<h4>Describe about yourself</h4><br><br>
+      <form enctype="multipart/form-data" action=<%= "/registerAsCandidate/"+uid+"/"+name %> method = "POST">
+      	 Upload Image (only .jpg image) : <br><br> <input type ="file" name ="file" /> <br><br><br><br>
+         About Me : <br><textarea rows = "5" cols = "50" name = "description">
+         </textarea>  
+         <br>
+         <input type = "submit" value = "Submit">
+      </form>
+   </body>
+</html>

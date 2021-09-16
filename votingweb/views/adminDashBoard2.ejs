@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <title>Admin DashBoard</title>
+</head>
+<body>
+    <div>
+        <h2>Logged In As <%=name%></h2>
+    </div>
+    
+    <div>
+        <form action="/adminLogout" method="POST">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+
+    <div>
+        <h3>My Elections : </h3><br>
+        <h3>================Presently Hosted================<h3><br>
+        <%presentlyHosted.forEach(function(row){%>
+            <ul>
+                <li><%= row%>
+                    <form action= <%= "/viewMoreAdminPoll/1&"+row[2] %> method="GET">
+                        <input type="submit" value="View More">
+                    </form>
+                </li>    
+            </ul>
+        <%});%>
+        <h3>================Past================<h3><br>
+            <%pastHosted.forEach(function(row){%>
+                <ul>
+                    <li><%= row%>
+                        <form action= <%= "/viewMoreAdminPoll/0&"+row[2] %> method="GET">
+                            <input type="submit" value="View More">
+                        </form>
+                    </li> 
+                </ul>
+        <%});%>
+    </div>
+
+    <div>
+        <h3>Host an election</h3>
+        <form action="/hostElection" method="POST" enctype="multipart/form-data">
+            <label for="electionName">electionName</label>
+            <input type="text" name="electionName"><br>
+
+            <label for="uniqueId">uniqueId : </label>
+            <input type="text" name="uniqueId"><br>
+
+            <label for="description">description : </label>
+            <input type="text" name="description"><br>
+
+            <input type="file" name="uploadedFile" value="Upload">
+
+
+            <input type="submit" value="HOST">
+        </form>
+    </div>
+    <div>
+        <h3>End an election</h3>
+        <form action="/endElection" method="POST">
+
+            <label for="uniqueId">uniqueId : </label>
+            <input type="text" name="uniqueId"><br>
+
+            <input type="submit" value="END">
+        </form>
+    </div>
+
+
+</body>
+</html>
